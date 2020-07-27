@@ -1,23 +1,7 @@
-;; Recursive fizzbuzz implementation
-
-;; This language really fucks with my brain
-;; and I'm pretty sure this program is badly written...
-
-(defun fizzbuzz (n lim)
-    (if (< n lim)
-        (progn
-            (if (and (eq (mod n 3) 0) (eq (mod n 5) 0))
-                (format t "FizzBuzz~%")
-                (progn
-                    (if (eq (mod n 3) 0)
-                        (format t "Fizz~%")
-                        (progn
-                            (if (eq (mod n 5) 0)
-                                (format t "Buzz~%")
-                                (format t "~D~%" n))))))
-
-            (fizzbuzz (+ n 1) lim))
-
-        (format t "~D~%" n))) ; If n == lim, then we're done
-
-(fizzbuzz 1 100)
+;; Very simple FizzBuzz in Common Lisp
+(loop for i from 1 to 100 do
+    (cond
+        ((eq (mod i 15) 0) (format t "FizzBuzz~%"))
+        ((eq (mod i 5) 0)  (format t "Buzz~%"))
+        ((eq (mod i 3) 0)  (format t "Fizz~%"))
+        (t                 (format t "~D~%" i))))
