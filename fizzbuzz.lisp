@@ -1,4 +1,4 @@
-; Very simple FizzBuzz in Common Lisp
+;; Very simple FizzBuzz in Common Lisp
 (loop for i from 1 to 100 do
     (cond
         ((eq (mod i 15) 0) (format t "FizzBuzz~%"))
