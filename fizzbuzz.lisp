@@ -14,16 +14,10 @@
                         (progn
                             (if (eq (mod n 5) 0)
                                 (format t "Buzz~%")
-                                (format t "~D~%" n)
-                            )
-                        )
-                    )
-                )
-            )
-            (fizzbuzz (+ n 1) lim)
-        )
-        (format t "~D~%" n) ; If n == lim, then we're done
-    )
-)
+                                (format t "~D~%" n))))))
+
+            (fizzbuzz (+ n 1) lim))
+
+        (format t "~D~%" n))) ; If n == lim, then we're done
 
 (fizzbuzz 1 100)
